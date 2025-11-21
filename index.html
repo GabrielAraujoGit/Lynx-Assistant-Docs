@@ -75,7 +75,7 @@
         </div>
         <div class="flex items-center gap-3">
           <button id="themeToggle" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition" title="Alternar tema">🌓</button>
-          <a href="#install" class="hidden md:block px-4 py-2 rounded-lg bg-lynx text-black font-semibold hover:bg-lynx-600 transition">Download</a>
+          <a href="https://github.com/gabriel-araujo-git/Lynx-Assistant/releases/download/V1.1/lynx.exe" class="hidden md:block px-4 py-2 rounded-lg bg-lynx text-black font-semibold hover:bg-lynx-600 transition">Download</a>
         </div>
       </div>
     </div>
@@ -468,7 +468,7 @@
         </div>
       </div>
       <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-sm text-zinc-500">
-        <p>© 2025 Lynx Assistant - Desenvolvido por Gabriel Araújo</p>
+        <p>© 2025 Lynx Assistant</p>
         <p class="mt-2 md:mt-0">Feito com ❤️ e Python</p>
       </div>
     </div>
@@ -477,22 +477,111 @@
   <script>
     // Commands Database
     const COMMANDS = [
-      { id: 'c1', category: 'local', icon: '💻', title: 'abrir vscode', aliases: ['vscode','code','vs'], desc: 'Abre o Visual Studio Code para desenvolvimento', action: { type:'local', exec: 'code' } },
-      { id: 'c2', category: 'local', icon: '🏢', title: 'abrir ln', aliases: ['ln','lnstudio','aln'], desc: 'Abre o LN Studio para desenvolvimento empresarial', action: { type:'local', exec: 'ln' } },
-      { id: 'c3', category: 'local', icon: '📁', title: 'abrir explorer', aliases: ['explorer','files','arquivos'], desc: 'Abre o explorador de arquivos do sistema', action: { type:'local', exec: 'explorer' } },
-      { id: 'c4', category: 'web', icon: '🤖', title: 'abrir chatgpt', aliases: ['chatgpt','gpt','openai'], desc: 'Abre o ChatGPT da OpenAI no navegador', action: { type:'url', url:'https://chat.openai.com' } },
-      { id: 'c5', category: 'web', icon: '📺', title: 'abrir youtube', aliases: ['youtube','yt'], desc: 'Abre o YouTube para assistir vídeos', action: { type:'url', url:'https://www.youtube.com' } },
-      { id: 'c6', category: 'streaming', icon: '🎵', title: 'abrir spotify', aliases: ['spotify','spot','musica'], desc: 'Abre o Spotify para ouvir música', action: { type:'url', url:'https://www.spotify.com' } },
-      { id: 'c7', category: 'streaming', icon: '🎬', title: 'abrir netflix', aliases: ['netflix','nfx','filmes'], desc: 'Abre a Netflix para assistir séries e filmes', action: { type:'url', url:'https://www.netflix.com' } },
-      { id: 'c8', category: 'web', icon: '🔍', title: 'abrir google', aliases: ['google','search','buscar'], desc: 'Abre o Google para pesquisas', action: { type:'url', url:'https://www.google.com' } },
-      { id: 'c9', category: 'prod', icon: '📧', title: 'abrir gmail', aliases: ['gmail','email','mail'], desc: 'Abre o Gmail para gerenciar emails', action: { type:'url', url:'https://mail.google.com' } },
-      { id: 'c10', category: 'prod', icon: '📊', title: 'abrir notion', aliases: ['notion','notes','notas'], desc: 'Abre o Notion para organização e notas', action: { type:'url', url:'https://www.notion.so' } },
-      { id: 'c11', category: 'local', icon: '🎨', title: 'abrir photoshop', aliases: ['photoshop','ps','adobe'], desc: 'Abre o Adobe Photoshop', action: { type:'local', exec: 'photoshop' } },
-      { id: 'c12', category: 'web', icon: '🐱', title: 'abrir github', aliases: ['github','git'], desc: 'Abre o GitHub para desenvolvimento colaborativo', action: { type:'url', url:'https://github.com' } },
-      { id: 'c13', category: 'prod', icon: '📅', title: 'abrir calendar', aliases: ['calendar','agenda','calendario'], desc: 'Abre o Google Calendar', action: { type:'url', url:'https://calendar.google.com' } },
-      { id: 'c14', category: 'streaming', icon: '🎮', title: 'abrir twitch', aliases: ['twitch','live','stream'], desc: 'Abre a Twitch para assistir lives', action: { type:'url', url:'https://www.twitch.tv' } },
-      { id: 'c15', category: 'web', icon: '🐦', title: 'abrir twitter', aliases: ['twitter','x'], desc: 'Abre o Twitter/X', action: { type:'url', url:'https://twitter.com' } }
-    ];
+    { id: 'c1', category: 'local',
+      icon: '<img src="icons8-visual-studio-code-2019-48.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir vscode', aliases: ['vscode','code','vs'],
+      desc: 'Abre o Visual Studio Code para desenvolvimento',
+      action: { type:'local', exec: 'code' }
+    },
+
+    { id: 'c2', category: 'local',
+      icon: '<img src="./imgs/LN.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir ln', aliases: ['ln','lnstudio','aln'],
+      desc: 'Abre o LN Studio para desenvolvimento empresarial',
+      action: { type:'local', exec: 'ln' }
+    },
+
+    { id: 'c3', category: 'local',
+      icon: '<img src="./imgs/EXPLORER.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir explorer', aliases: ['explorer','files','arquivos'],
+      desc: 'Abre o explorador de arquivos do sistema',
+      action: { type:'local', exec: 'explorer' }
+    },
+
+    { id: 'c4', category: 'web',
+      icon: '<img src="icons8-chatgpt-48.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir chatgpt', aliases: ['chatgpt','gpt','openai'],
+      desc: 'Abre o ChatGPT da OpenAI no navegador',
+      action: { type:'url', url:'https://chat.openai.com' }
+    },
+
+    { id: 'c5', category: 'web',
+      icon: '<img src="icons8-youtube-30.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir youtube', aliases: ['youtube','yt'],
+      desc: 'Abre o YouTube para assistir vídeos',
+      action: { type:'url', url:'https://www.youtube.com' }
+    },
+
+    { id: 'c6', category: 'streaming',
+      icon: '<img src="./imgs/SPOTIFY.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir spotify', aliases: ['spotify','spot','musica'],
+      desc: 'Abre o Spotify para ouvir música',
+      action: { type:'url', url:'https://www.spotify.com' }
+    },
+
+    { id: 'c7', category: 'streaming',
+      icon: '<img src="icons8-netflix-48.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir netflix', aliases: ['netflix','nfx','filmes'],
+      desc: 'Abre a Netflix para assistir séries e filmes',
+      action: { type:'url', url:'https://www.netflix.com' }
+    },
+
+    { id: 'c8', category: 'web',
+      icon: '<img src="./imgs/GOOGLE.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir google', aliases: ['google','search','buscar'],
+      desc: 'Abre o Google para pesquisas',
+      action: { type:'url', url:'https://www.google.com' }
+    },
+
+    { id: 'c9', category: 'prod',
+      icon: '<img src="./imgs/GMAIL.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir gmail', aliases: ['gmail','email','mail'],
+      desc: 'Abre o Gmail para gerenciar emails',
+      action: { type:'url', url:'https://mail.google.com' }
+    },
+
+    { id: 'c10', category: 'prod',
+      icon: '<img src="./imgs/NOTION.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir notion', aliases: ['notion','notes','notas'],
+      desc: 'Abre o Notion para organização e notas',
+      action: { type:'url', url:'https://www.notion.so' }
+    },
+
+    { id: 'c11', category: 'local',
+      icon: '<img src="./imgs/PHOTOSHOP.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir photoshop', aliases: ['photoshop','ps','adobe'],
+      desc: 'Abre o Adobe Photoshop',
+      action: { type:'local', exec: 'photoshop' }
+    },
+
+    { id: 'c12', category: 'web',
+      icon: '<img src="icons8-github-30.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir github', aliases: ['github','git'],
+      desc: 'Abre o GitHub para desenvolvimento colaborativo',
+      action: { type:'url', url:'https://github.com' }
+    },
+
+    { id: 'c13', category: 'prod',
+      icon: '<img src="./imgs/CALENDAR.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir calendar', aliases: ['calendar','agenda','calendario'],
+      desc: 'Abre o Google Calendar',
+      action: { type:'url', url:'https://calendar.google.com' }
+    },
+
+    { id: 'c14', category: 'streaming',
+      icon: '<img src="./imgs/TWITCH.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir twitch', aliases: ['twitch','live','stream'],
+      desc: 'Abre a Twitch para assistir lives',
+      action: { type:'url', url:'https://www.twitch.tv' }
+    },
+
+    { id: 'c15', category: 'web',
+      icon: '<img src="./imgs/TWITTER.png" class="w-7 h-7 object-contain" alt="">',
+      title: 'abrir twitter', aliases: ['twitter','x'],
+      desc: 'Abre o Twitter/X',
+      action: { type:'url', url:'https://twitter.com' }
+    }
+  ];
 
     // State
     let filtered = [...COMMANDS];
@@ -575,7 +664,8 @@
 
           el.innerHTML = `
             <div class="flex items-start gap-4">
-              <div class="text-3xl flex-shrink-0">${c.icon}</div>
+              
+              <div class="flex items-center justify-center w-8 h-8 flex-shrink-0">${c.icon}</div>
               <div class="flex-1 min-w-0">
                 <div class="font-semibold text-lg text-lynx mb-1 mono truncate">${escapeHtml(c.title)}</div>
                 <div class="text-sm text-zinc-400 mb-3">${escapeHtml(c.desc)}</div>
@@ -614,7 +704,7 @@
     // Modal
     function showModal(cmd) {
       currentCommand = cmd;
-      document.getElementById('modalIcon').textContent = cmd.icon;
+      document.getElementById('modalIcon').innerHTML = cmd.icon;
       document.getElementById('modalTitle').textContent = cmd.title;
       document.getElementById('modalCategory').textContent = '📂 ' + getCategoryName(cmd.category);
       document.getElementById('modalDesc').textContent = cmd.desc;
