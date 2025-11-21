@@ -82,6 +82,15 @@ Para publicar via GitHub Pages:
 
 ---
 
+## Como Contribuir
+
+Contribuições são bem-vindas. Para contribuir:
+
+1. Faça um Fork  
+2. Crie uma branch de feature  
+3. Envie um Pull Request descrevendo claramente a alteração  
+
+---
 
 ## Licença
 
